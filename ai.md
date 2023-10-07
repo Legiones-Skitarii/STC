@@ -35,3 +35,4 @@ Extra
         * The little book of deep learning - Francois Fleuret - https://fleuret.org/public/lbdl.pdf
 * WandB -> Create acc -> Good for visualising data
 * gradient descent / learning rate schedulers -> modify leraning rate on the fly
+* adapter + model -> full model -----> get adapter weights after training, merge with full model to get better model
