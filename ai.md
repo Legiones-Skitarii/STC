@@ -36,3 +36,5 @@ Extra
 * WandB -> Create acc -> Good for visualising data
 * gradient descent / learning rate schedulers -> modify leraning rate on the fly
 * adapter + model -> full model -----> get adapter weights after training, merge with full model to get better model
+* gorilla llm -> better for code
+* codecherryPop -> llama2 good for production use
