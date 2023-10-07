@@ -33,3 +33,4 @@ Extra
     * Resources
         * 100 page ml book
         * The little book of deep learning - Francois Fleuret - https://fleuret.org/public/lbdl.pdf
+* WandB -> Create acc -> Good for visualising data
