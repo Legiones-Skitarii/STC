@@ -83,3 +83,27 @@ Extra: RFC 1918 , Gopher Protocol, Kermit protocol, ELIZA , Vint Cerf
 
 ---
 
+### All code is in Rust.
+
+## 3.3
+
+- [Socket Address V6 Rabbit hole](https://doc.rust-lang.org/nightly/core/net/struct.SocketAddrV6.html)
+    - rabbit hole -> look at parse in first example
+- [Socket Address struct](https://doc.rust-lang.org/nightly/core/net/enum.SocketAddr.html)
+
+---
+
+## 3.4
+- inet_pton() -> string to sock_addr -> presentation to network
+- inet_ntop() -> sock_addr to string -> network to presentation
+- These are C conversion functions. Rust implements these as traits on the IPAddrV4 / V6 types.
+
+### 3.4.1
+- NAT -> Network Address Translation -> Internal IP address to External IP address and vice versa
+    - implemented by firewalls -> especially on home routers
+    - Standard Internal
+        * 10.x.x.x
+        * 192.168.x.x
+        * 172.y.x.x
+            * y = [16..31]
+* Extra : great firewall of china
