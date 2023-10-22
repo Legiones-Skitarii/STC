@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net" modified="2023-10-22T07:40:39.446Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0" etag="6x4c4dPPO9L7f1pLmrX2" version="22.0.6" type="device">
+  <diagram name="Page-1" id="EY8hxfSTivBVrgOZGMk1">
+    <mxGraphModel dx="986" dy="542" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nsCcm-HC6ybXiZ2vDwsd-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;dashed=1;" edge="1" parent="1" source="nsCcm-HC6ybXiZ2vDwsd-1" target="nsCcm-HC6ybXiZ2vDwsd-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nsCcm-HC6ybXiZ2vDwsd-10" value="Cat" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nsCcm-HC6ybXiZ2vDwsd-9">
+          <mxGeometry x="-0.0466" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nsCcm-HC6ybXiZ2vDwsd-1" value="Comp" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nsCcm-HC6ybXiZ2vDwsd-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.875;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="nsCcm-HC6ybXiZ2vDwsd-2" target="nsCcm-HC6ybXiZ2vDwsd-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nsCcm-HC6ybXiZ2vDwsd-7" value="TCP/IP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nsCcm-HC6ybXiZ2vDwsd-3">
+          <mxGeometry x="-0.0519" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nsCcm-HC6ybXiZ2vDwsd-2" value="Internet" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="370" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nsCcm-HC6ybXiZ2vDwsd-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;dashed=1;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="nsCcm-HC6ybXiZ2vDwsd-8" target="nsCcm-HC6ybXiZ2vDwsd-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nsCcm-HC6ybXiZ2vDwsd-13" value="File Contents" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nsCcm-HC6ybXiZ2vDwsd-12">
+          <mxGeometry x="-0.2569" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nsCcm-HC6ybXiZ2vDwsd-8" value="File" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nsCcm-HC6ybXiZ2vDwsd-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.55;entryY=0.95;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="nsCcm-HC6ybXiZ2vDwsd-11" target="nsCcm-HC6ybXiZ2vDwsd-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nsCcm-HC6ybXiZ2vDwsd-11" value="End User" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
