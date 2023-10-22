@@ -107,3 +107,28 @@ Extra: RFC 1918 , Gopher Protocol, Kermit protocol, ELIZA , Vint Cerf
         * 172.y.x.x
             * y = [16..31]
 * Extra : great firewall of china
+
+---
+
+# Chapter 4
+IPv4 -> IPv6 -> Things to keep generic + change
+
+---
+
+# Chapter 5
+
+## Until 5.2
+1. getaddrinfo() -> Rust -> Can directly translate strings to socket addresses
+    * [C source code for getaddrinfo](https://github.com/openbsd/src/blob/7bda13b189a4f018fdaecef65dbcb2de30679627/lib/libc/asr/getaddrinfo.c#L28) 
+    * [Rust Source Code](https://doc.rust-lang.org/std/net/trait.ToSocketAddrs.html) 
+2. socket() -> Rust -> SockAddr ? 
+
+---
+
+* Fix -> ToSocketAddrs -> have to give "google.com:<port_number>" for it to work
+* Extra -> Iterables | Iterators | Generators
+    * Yield vs return
+    * Symbolic Links -> Hard vs Soft Links
+        * https://chat.openai.com/share/ea22ce75-9af8-46c1-818b-d6d64255f0e4
+
+---
