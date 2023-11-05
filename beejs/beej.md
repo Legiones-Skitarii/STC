@@ -132,3 +132,60 @@ IPv4 -> IPv6 -> Things to keep generic + change
         * https://chat.openai.com/share/ea22ce75-9af8-46c1-818b-d6d64255f0e4
 
 ---
+
+Extra : DNS Lookup crate in rust 
+	* Motivation: ``` For resolving ip addresses for web servers you will probably want to avoid to_socket_addrs(). The request crate for example uses hyper::client::connect::dns::GaiResolver (which uses the same libc interface as to_socket_addrs()) or https://github.com/hickory-dns/hickory-dns which has a pure rust dns implementation.```
+	
+---
+
+## 5.3
+1. Sockets <-> Ports -> Call bind
+   * Rust me sock_addr already takes care of this.
+2. Old ways in book
+3. Ports < 1024 -> Reserved for superusers
+4. If you don't give a shit about which port -> call connect() and it should assign
+
+## 5.4
+
+* connect -> connects to a remote host given IP address && port
+* Returns -1 on error and sets the variable : errno
+
+## 5.5
+* listen -> waits for a request for a connection
+  * backlog -> maximum number of connections in request queue
+
+Extra : Backlog parameter in rust hardcoded to 128 ?
+	* [Github issue](https://github.com/rust-lang/rust/issues/55614)
+
+## 5.6
+* Accept -> Accepts the connection & returns a socket file descriptor
+* Steps till now
+  * create the structs
+  * create the socket
+  * bind socket to port
+  * listen on port
+  * accept connection
+
+### 5.7
+
+* send() -> send data
+  * returns number of bytes
+  * you have to compare and see if length of data sent is equal to data length, or you have to fire another send() call
+* recv() -> recieve data
+  * returns bytes recieved in buffer
+  * returns 0 if connection is closed
+
+Extra
+* Project -> Making git
+* Telnet -> how to use
+* FTP server
+* [How much data can you send through sockets](https://stackoverflow.com/questions/27120736/maximum-data-size-that-can-be-sent-and-received-using-sockets-at-oncetcp-sock)
+  * [From the post above, about sockets](https://blog.erratasec.com/2014/04/fun-with-ids-funtime-3-heartbleed.html)
+  * [Bittorrent extended to use UDP](http://www.bittorrent.org/beps/bep_0029.html)
+  
+* Fun stuff : Hiding zips in images
+1. Zip up files - `zip <output> <files>
+2. Concat to image - `cat mars.png 1.zip > mars_hidden.png`
+3. unzip image - `unzip <image>`
+
+---
