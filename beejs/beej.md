@@ -15,7 +15,6 @@
     * Non-sequential
     * Fast -> Prioritises speed over reliability
     * Sends ack packet after recieving
-
 - Different Layers
   1. Application Layer -> Telnet & FTP -> Debate
   2. Host to Host transport layer -> TCP & UDP -> Marathi
@@ -190,3 +189,5 @@ Extra
 3. unzip image - `unzip <image>`
 
 ---
+
+
