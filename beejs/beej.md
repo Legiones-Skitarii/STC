@@ -156,7 +156,7 @@ Extra : DNS Lookup crate in rust
 
 Extra : Backlog parameter in rust hardcoded to 128 ?
 	* [Github issue](https://github.com/rust-lang/rust/issues/55614)
-
+		*  [Socket 2 Library for advacned rust stuff](https://github.com/rust-lang/socket2)
 ## 5.6
 * Accept -> Accepts the connection & returns a socket file descriptor
 * Steps till now
@@ -190,4 +190,36 @@ Extra
 
 ---
 
+### Did this without looking at code and half asleep. Next time check code + add more notes + wake up
 
+### 5.8
+1. sendto() -> sending data for a datagram
+	* Specify specific socket address 
+	* Need to know the ip address we're sending to
+	* Returns same stuff as send()
+2. recvFrom() -> recieve data for datagrams
+	* specify address we're recieving from
+	* return same stuff as recv()
+
+* These seem to be legacy / functions used for specific purposes ?
+* If you `connect()` to a datagram socket, can directly use `send()` and `recv()`
+
+### 5.9
+`close(sockfd)` -> closes the socket
+`shutdown(sockfd)` -> stops from sending / recieving or both (same as close)
+    * 0 -> Further recieves are disallowed
+    * 1 -> Further sends are disallowed
+    * 2 -> Both -> Both send and recieve are disabled.
+
+* Shutdown changes usability, doesn't free file descriptor. Close does
+* Can you restart a shutdown file descriptor ?
+
+### 5.10
+Extra : https://datatracker.ietf.org/doc/html/rfc1413
+* getpeername() -> gives you a socket address structure for the other end of the connection.
+    * Essentially ip, port, socket config options
+
+### 5.11
+
+* gethostname() -> returns name of current computer
+    * can be used for getting IP Address
