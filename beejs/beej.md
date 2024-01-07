@@ -72,6 +72,7 @@ Extra : Have a look throught the RFC -> 793 (TCP) , 791 (IP) , 768 (UDP)
     2. Little Endian -> b34f -> 4f + b3
     * Host Byte Order -> Depends on system
       * x86 -> Little endian -> run `lscpu | grep 'Byte Order'`
+      * `sysctl hw` for mac
   - Functions for conversion
     1. htons() -> Host TO Network Short
     2. ntohs()
@@ -141,7 +142,7 @@ Extra : DNS Lookup crate in rust
 ## 5.3
 1. Sockets <-> Ports -> Call bind
    * Rust me sock_addr already takes care of this.
-2. Old ways in book
+2. Old way mentioned by the author in the book
 3. Ports < 1024 -> Reserved for superusers
 4. If you don't give a shit about which port -> call connect() and it should assign
 
