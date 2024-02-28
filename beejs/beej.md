@@ -223,3 +223,22 @@ Extra : https://datatracker.ietf.org/doc/html/rfc1413
 
 * gethostname() -> returns name of current computer
     * can be used for getting IP Address
+
+## Chapter 7
+### 7.1
+* Blocking -> sleep until something happens
+* non-blocking -> fcntl(sockfd, F_SETFL, O_NONBLOCK)
+   * returns EAGAIN or EWOULDBLOCK
+   * not recommended -> high CPU usage
+
+### 7.2
+* Polling -> check if something is ready
+    * set of file descriptors awaiting a particular event
+    * event -> POLLIN, POLLOUT -> for C
+    * [polling in rust](https://github.com/tokio-rs/mio)
+
+- Extra: 
+    - [linux poll.h](https://elixir.bootlin.com/uclibc-ng/v1.0.23/source/libc/sysdeps/linux/common/bits/poll.h)
+    - [rust task::Poll](https://doc.rust-lang.org/std/task/enum.Poll.html)
+    - [poll udp socket](https://stackoverflow.com/questions/39486919/how-do-i-poll-a-stdnetudpsocket)
+
