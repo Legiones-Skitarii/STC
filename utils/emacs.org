@@ -1,0 +1,36 @@
+* Emacs Navigation Commands
+  Emacs offers a wide range of navigation commands. Here's a concise guide to the basics.
+
+
+** Basic Cursor Movement
+   - Move one character forward: =C-f=
+   - Move one character backward: =C-b=
+   - Move one line up: =C-p=
+   - Move one line down: =C-n=
+   - Move to the beginning of the line: =C-a=
+   - Move to the end of the line: =C-e=
+
+** Moving by Words and Paragraphs
+   - Forward one word: =M-f=
+   - Backward one word: =M-b=
+   - Move to the beginning of the paragraph: =M-{=
+   - Move to the end of the paragraph: =M-}=
+
+** Moving by Screenfuls
+   - Scroll down one screenful: =C-v=
+   - Scroll up one screenful: =M-v=
+
+** Moving to Text Boundaries
+   - Move to the beginning of the buffer (document): =M-<=
+   - Move to the end of the buffer (document): =M->=
+
+** Other Navigation Commands
+   - Go to line: =M-x goto-line= then enter the line number.
+   - Move between open buffers: =C-x b= then type the buffer name, or =C-x C-b= to list all buffers.
+
+** Navigation in Special Modes
+   - Org-mode: Navigate through headings using =C-c C-n= (next heading) and =C-c C-p= (previous heading).
+   - Dired (Directory Editor): Use basic cursor movement keys.
+
+** Window and Frame Navigation
+   - Switch between windows: =C-x o=

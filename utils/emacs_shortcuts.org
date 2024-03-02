@@ -1,0 +1,22 @@
+* Useful Shortcuts
+
+** Projectile
+- Switch between implementation and test : C-c p t
+
+** Folding
+- Hide all regions : C-c @ C-h
+- Show all : C-c @ C-a
+- Hide block : C-c @ C-d
+- Show block : C-c @ C-s
+- Hide Level : C-c @ C-l
+
+** Magit
+- *Access Magit*: ~M-x magit-status RET~
+- *Stage Changes*: ~s~ (on selected file/hunk)
+- *Unstage Changes*: ~u~ (on selected staged file/hunk)
+- *Commit Changes*: ~c c~ (then ~C-c C-c~ to finalize commit)
+- *Push Changes*: ~P u~
+- *Pull Changes*: ~F u~
+- *Switch Branch*: ~b b~
+- *Create Branch*: ~b c~
+- *View Help*: ~?~ (in Magit buffers)

@@ -1,0 +1,48 @@
+* Navigating a Terminal 101
+Navigating the terminal using Zsh involves a combination of command-line skills and keyboard shortcuts. This guide will help you get started.
+
+** Basic Commands
+- cd: Change directory.
+  + cd ~ or cd: Go to your home directory.
+  + cd /: Go to the root directory.
+  + cd ..: Move up one directory.
+  + cd -: Switch to the previous directory.
+- ls: List directory contents.
+  + ls -a: List all files, including hidden ones.
+  + ls -l: List with detailed information.
+- pwd: Print the current working directory.
+
+** Navigation Shortcuts
+- Tab Completion: Press Tab to auto-complete file names, commands, and more.
+- Reverse Search: Press Ctrl + R and start typing to search through your command history. Press Ctrl + R again to cycle through matches.
+
+** History Commands
+- history: Show command history.
+- !n: Execute the command with the history number n.
+- !!: Execute the last command again.
+- !string: Execute the last command that starts with string.
+
+** File and Directory Manipulation
+- mkdir directory_name: Create a new directory.
+- touch file_name: Create a new file or update the timestamp of an existing file.
+- rm file_name: Delete a file.
+- rmdir directory_name: Delete a directory (must be empty).
+- mv old_name new_name: Move/rename a file or directory.
+
+** Keyboard Shortcuts
+- Ctrl + A: Move the cursor to the beginning of the line.
+- Ctrl + E: Move the cursor to the end of the line.
+- Ctrl + U: Cut from the start of the line to the cursor.
+- Ctrl + K: Cut from the cursor to the end of the line.
+- Ctrl + W: Cut the word before the cursor.
+- Alt + F: Move cursor forward one word.
+- Alt + B: Move cursor back one word.
+
+** Customizing Zsh
+Zsh is highly customizable through its configuration file .zshrc located in your home directory. You can edit this file to change the prompt, set aliases, and configure many other aspects of your shell environment.
+
+- Aliases: Set command shortcuts.
+  + alias ll='ls -la': Creates an alias ll for ls -la.
+- Prompt Customization: Change how your prompt looks.
+  + Editing PROMPT variable in .zshrc.
+- Plugins and Themes: Use Oh My Zsh, a community-driven framework for managing Zsh configuration, which offers many plugins and themes to enhance your terminal experience.
