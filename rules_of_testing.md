@@ -1,5 +1,5 @@
 # Testing and the existential crisis
-## TLDR : The basic rules of testing software
+## TLDR : The basic rules of testing software 
 
 Recently, as I started writing unit tests for software (and longingly looked at some decorative nooses while doing so), I got so confused that I eventually had to come up with bunch of rules on how to write tests.
 
