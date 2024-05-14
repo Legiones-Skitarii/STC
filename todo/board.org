@@ -1,0 +1,27 @@
+* TODO Add Layers Option
+  - [ ] Implement a Layer class that manages a collection of objects.
+  - [ ] Add functionality in SceneManager to switch between layers.
+  - [ ] Ensure boxes are added to the currently active layer.
+  - [ ] Implement spacing logic so that boxes within a layer are equally spaced.
+
+* TODO Add Labels to Boxes
+  - [ ] Create a method in the Box class for adding labels.
+  - [ ] Use THREE.Sprite with THREE.TextTexture or HTML overlays for labels.
+  - [ ] Update label positions in the render loop to align with box positions.
+
+* TODO Delete Boxes
+  - [ ] Add selection logic to identify which box is clicked.
+  - [ ] Implement a method to remove the selected box from the scene or layer.
+  - [ ] Add UI element (button or keypress event) to trigger box deletion.
+
+* TODO Import / Export Boxes
+  - [ ] Define a format (e.g., JSON) for exporting box properties.
+  - [ ] Implement export functionality that traverses layers/boxes and serializes their properties.
+  - [ ] Create import functionality that parses the serialized format and recreates boxes in their respective layers.
+
+* TODO Add Arrows Between Boxes
+  - [ ] Implement selection mode for boxes to start and end arrow drawing.
+    - [ ] When a box is clicked first, highlight it (e.g., outline in green).
+    - [ ] On second box click, draw an arrow from the first box to the second.
+  - [ ] Create an Arrow class that handles arrow drawing between two points.
+  - [ ] Add logic to update arrow orientation and length based on box positions.

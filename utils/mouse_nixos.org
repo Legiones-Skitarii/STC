@@ -1,0 +1,39 @@
+* Steps to Change Mouse Sensitivity Using xinput
+
+1. **Identify Mouse Device ID:**
+   - Run the following command to list input devices and find the ID of your mouse device:
+     ```
+     xinput list
+     ```
+
+   - Note down the ID associated with your mouse device.
+
+2. **Adjust Mouse Sensitivity:**
+   - Use the `xinput` command to modify the "Coordinate Transformation Matrix" property of your mouse device. The command syntax is as follows:
+     ```
+     xinput --set-prop <device-id> 'Coordinate Transformation Matrix' <value> <0> <0> <0> <value> <0> <0> <0> <1>
+     ```
+
+     Replace `<device-id>` with the ID of your mouse device and `<value>` with the desired sensitivity value. You may need to experiment with different values to find the one that suits your preferences.
+
+   - For example, to double the sensitivity of your mouse, you might use a command like this:
+     ```
+     xinput --set-prop 177 'Coordinate Transformation Matrix' 2 0 0 0 2 0 0 0 1
+     ```
+
+3. **Test Changes:**
+   - After running the command, test your mouse to see if the sensitivity has changed according to your preference. Move the mouse cursor and observe the response.
+
+4. **Verify Changes:**
+   - Before and after running the `xinput` command, use the following command to list the properties of your mouse device and verify if the changes have been applied:
+     ```
+     xinput list-props <device-id>
+     ```
+
+   - Make sure that the values of the "Coordinate Transformation Matrix" have changed accordingly.
+
+5. **Restart Xorg (if necessary):**
+   - Sometimes changes to input device settings may require restarting the Xorg server to take effect. You can restart Xorg by logging out and logging back in, or by restarting your system.
+
+6. **Alternative: Use GUI Tools:**
+   - If adjusting settings through the command line is proving difficult, consider using GUI tools such as `xinput-gui` or desktop environment settings panels if available. These tools provide a more intuitive way to adjust mouse settings.
