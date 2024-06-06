@@ -1,0 +1,346 @@
+
+#+PROPERTY: header-args:racket :session *Racket REPL* :eval racket :results output
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  (+ 12 23 11)
+#+END_SRC
+
+#+RESULTS:
+: 46
+  
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  1
+#+END_SRC
+  
+#+RESULTS:
+: 1
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  (define (square x) (* x x))
+  (square 10)
+#+END_SRC
+
+#+RESULTS:
+: 100
+  
+  
+Ways to evaluate expression
+* Applicative model
+** Basically, solve the innermost expressions and expand upwards
+* Normal
+** Expand downwards, and then solve everything. Like a global flatten
+
+Word to know
+* Expression, Predicate, procedures, value, name
+***** Special forms vs procedures
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  10
+  (+ 5 3 4)
+  (- 9 1)
+  (/ 6 2)
+  (+ (* 2 4) (- 4 6))
+#+END_SRC
+
+#+RESULTS:
+: 10
+: 12
+: 8
+: 3
+: 6
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  (define a 3)
+  (define b (+ a 1))
+  (+ a b (* a b))
+  (= a b)
+
+  (if (and (> b a) (< b (* a b)))
+      b
+      a)
+  (cond ((= a 4) 6)
+	((= b 4) (+ 6 7 a))
+	(else 25))
+
+  (+ 2 (if (> b a) b a))
+
+  (* (cond ((> a b) a)
+	   ((< a b) b)
+	   (else -1))
+     (+ a 1))
+#+END_SRC
+
+#+RESULTS:
+: 19
+: #f
+: 4
+: 16
+: 6
+: 16
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  (- 1 2 3)
+  (- 1 (- 2 3))
+#+END_SRC
+
+#+RESULTS:
+: -4
+: 2
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+
+  (define (max a b) (if (> a b) a b))
+  (define (square a) (* a a))
+
+  (define
+    (largest-squares-sum a b c)
+    (if
+     (> a b)
+     (+ (square a) (square (max b c)))
+     (+ (square b) (square (max a c)))
+     ))
+  (largest-squares-sum 1 4 5)
+#+END_SRC
+
+#+RESULTS:
+: 41
+
+Exercise
+1.5: (define (p) (p)) -> Results in an infinte loop since it'll always call itself.
+So normal order evals the if and returns 0.
+Applicative evals the p and infinite loop.
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  (define (square x) (* x x))
+  (define (average x y)
+    (/ (+ x y) 2))
+
+  (define (good-enough? guess x)
+    (< (abs (- (square guess) x)) 0.001))
+
+  (define (improve guess x)
+    (average guess (/ x guess)))
+
+  (define (sqrt-iter guess x)
+    (if (good-enough? guess x)
+	guess
+	(sqrt-iter (improve guess x)
+		   x)))
+
+#+END_SRC
+
+#+RESULTS:
+
+Skipped newtons approximation. Annoying. Will work on them after. Search "1.1.7"
+
+Ex: 1.10
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  (define (A x y)
+    (cond ((= y 0) 0)
+	  ((= x 0) (* 2 y))
+	  ((= y 1) 2)
+	  (else (A (- x 1)
+		   (A x (- y 1))))))
+
+  (define (f n) (A 0 n)) ;; This doubles, since x=0 -> 2*n
+  (define (g n) (A 1 n)) ;; This is 2^n
+  (define (h n) (A 2 n)) ;; Tetration i.e 2^2^2....n times
+
+  (A 1 10)
+  (A 2 4)
+  (A 3 3)
+#+END_SRC
+
+#+RESULTS:
+: 1024
+: 65536
+: 65536
+: 1024
+
+Notes:
+
+(define (g n) (A 1 n)) explands to (A 0 (A 0 ( A 0 ........ 2)
+  -> *2(*2(*2.....2) -> 2^n
+
+(define (h n) (A 2 n)) expands to
+-> (A 1 (A 2 n-1)) -> 2^(A 2 n-1) -> (2^2^2.....n-1)^2
+-> https://en.wikipedia.org/wiki/Tetration
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  (define (first-denomination kinds-of-coins)
+    (cond ((= kinds-of-coins 1) 50)
+	  ((= kinds-of-coins 2) 25)
+	  ((= kinds-of-coins 3) 10)
+	  ((= kinds-of-coins 4) 5)
+	  ((= kinds-of-coins 5) 1)))
+
+  (define (count-change amount) (cc amount 5))
+
+  (define (cc amount kinds-of-coins)
+    (cond ((= a
+	      mount 0) 1)
+	  ((or (< amount 0) (= kinds-of-coins 0)) 0)
+	  (else (+ (cc amount
+		       (- kinds-of-coins 1))
+		   (cc (- amount
+			  (first-denomination kinds-of-coins))
+		       kinds-of-coins)))))
+
+  (count-change 5)
+#+END_SRC
+
+#+RESULTS:
+: 2
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  ;; Recursive
+  (define (f n)
+    ( cond
+      ((< n 3) n)
+      (else (+ (f (- n 1)) (* 2 (f (- n 2))) (* 3 (f (- n 3)))))
+      ))
+
+  ;; Iterative
+  (define (f1 n)
+    (define (helper a b c x)
+      (cond ((= 2 x) c)
+	    (else (helper b c (+ c (* 2 b) (* 3 a)) (- x 1)))
+	    ))
+
+    (cond
+      ((< n 3) n)
+      (else (helper 0 1 2 n))
+      ))
+
+  (f 10)
+  (f1 10)
+#+END_SRC
+
+#+RESULTS:
+: 1892
+: 1892
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  (define (pascal x y)
+    (cond
+      ((or (= x 0) (= y 0)) 1)
+      (else
+       (+
+	(pascal (- x 1) y)
+	(pascal x (- y 1))
+	)
+       )
+      ))
+
+  (pascal 1 2)
+#+END_SRC
+
+#+RESULTS:
+: 3
+
+Ex 1.13 : https://x.com/CL2700/status/1791874898735886598
+
+Fast exponentiation
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  (define (exp b n)
+    (if (= n 0) 1
+	(* b (exp b (- n 1)))
+	)
+    )
+
+  (define (iter-exp b n)
+    (define (iter-exp-helper b n acc)
+      (if (= n 0) acc
+	  (iter-exp-helper b (- n 1) (* b acc)))
+      )
+    (iter-exp-helper b n 1)
+    )
+
+  (define (square x) (* x x))
+
+  (define (fast-exp b n)
+    (cond ((= n 0) 1)
+	  ((even? n) (square (fast-exp b (/ n 2))))
+	  (else (* b (fast-exp b (- n 1))))))
+
+  (define (fast-iter-exp b n)
+    (define (fast-iter-exp-helper b n acc)
+      (cond
+	((= n 0) acc) 
+	((even? n) (fast-iter-exp-helper (square b) (/ n 2) acc))
+	((odd? n) (fast-iter-exp-helper b (- n 1) (* acc b)))
+	))
+    (fast-iter-exp-helper b n 1)
+    )
+
+  (exp 123456 12)
+  (iter-exp 123456 12)
+  (fast-exp 123456 12)
+  (fast-iter-exp 123456 12)
+#+END_SRC
+
+#+RESULTS:
+: 12535637344887704516447688721417492690366247570114367492980736
+: 12535637344887704516447688721417492690366247570114367492980736
+: 12535637344887704516447688721417492690366247570114367492980736
+: 12535637344887704516447688721417492690366247570114367492980736
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  ;; Fast multiplication
+
+  (define (double x) (+ x x))
+  (define (halves x) (/ x 2))
+
+  (define (* x y)
+    (define (helper x y acc)
+      (cond
+	((= y 0) acc)
+	((even? y) (helper (double x) (halves y) acc))
+	((odd? y) (helper x (- y 1) (+ acc x)))
+	)
+      )
+    (helper x y 0)
+    )
+
+  (* 23 23)
+#+END_SRC
+
+#+RESULTS:
+: 529
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  (define (fib n)
+    (fib-iter 1 0 0 1 n))
+
+  (define (square x) (* x x))
+
+  (define
+    (p0 p q)
+    (+ (square p) (square q)))
+
+  (define (q0 p q)
+    (+ (* 2 p q) (square q)))
+
+
+  (define (fib-iter a b p q count)
+    (cond ((= count 0) b)
+	  ((even? count)
+	   (fib-iter a
+		     b
+		     (p0 p q)
+		     (q0 p q)
+		     (/ count 2)))
+
+
+	  (else (fib-iter (+ (* b q) (* a q) (* a p))
+			  (+ (* b p) (* a q))
+			  p
+			  q
+			  (- count 1)))))
+
+  (fib 10)
+#+END_SRC
+
+#+RESULTS:
+: 55
