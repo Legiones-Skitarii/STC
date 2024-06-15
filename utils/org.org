@@ -1,0 +1,67 @@
+#+TITLE: Org Mode Basics
+#+AUTHOR: ChatGPT
+
+* Introduction
+Org mode is a powerful system for organizing your life, taking notes, managing tasks, and much more. It is an extension of Emacs, a highly extensible and customizable text editor.
+
+* Key Features
+** Outlines
+Org mode allows you to create structured documents with multiple levels of headings. Use asterisks (*) to create headings:
+#+BEGIN_EXAMPLE
+* Heading 1
+** Heading 2
+*** Heading 3
+#+END_EXAMPLE
+
+** Task Management
+Org mode is also great for managing tasks. You can create TODO items and mark them as DONE:
+#+BEGIN_EXAMPLE
+* TODO Write a blog post
+* DONE Submit the report
+#+END_EXAMPLE
+
+** Scheduling and Deadlines
+You can schedule tasks and set deadlines with Org mode:
+#+BEGIN_EXAMPLE
+* TODO Prepare for meeting
+  SCHEDULED: <2024-06-10 Mon>
+* TODO Submit assignment
+  DEADLINE: <2024-06-15 Sat>
+#+END_EXAMPLE
+
+** Taking Notes
+Org mode can be used for taking detailed notes. You can include plain text, source code, and more:
+#+BEGIN_EXAMPLE
+* Meeting Notes
+** Attendees
+- Alice
+- Bob
+** Discussion Points
+3- Project updates
+- Budget review
+#+END_EXAMPLE
+
+** Source Code Blocks
+You can include source code blocks in various programming languages:
+#+BEGIN_SRC python
+  print("Hello, Org mode!")
+#+END_SRC
+
+** Tables
+Creating tables is easy with Org mode:
+#+BEGIN_EXAMPLE
+| Name   | Age | City    |
+|--------+-----+---------|
+| Alice  | 30  | New York|
+| Bob    | 25  | London  |
+#+END_EXAMPLE
+
+* Basic Commands
+Here are some essential commands to get started with Org mode:
+- =C-c C-t=: Change TODO state
+- =C-c C-s=: Schedule a task
+- =C-c C-d=: Set a deadline
+- =C-c C-c=: Re-evaluate a code block
+
+* Conclusion
+Org mode is a versatile tool that can help you stay organized and productive. Explore its features and customize it to suit your workflow.

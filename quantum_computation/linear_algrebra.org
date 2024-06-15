@@ -1,0 +1,46 @@
+* Linear Algebra
+** Field
+- Set with 2 binary operations
+  - addition and multiplication
+  - Properties
+    1. Closure : ∀ α,β ∈ F ⇒ (α+β),(α⋅β) ∈ F
+    2. Associativity : ∀ α,β,γ ∈ F ⇒ α + (β + γ) = (α + β) + γ
+    3. Communtativity : ∀ α,β ∈ F ⇒
+       - α + β = β + α
+       - α ⋅ β = β ⋅ α
+    4. Disturbutivity : ∀ α,β,γ ∈ F ⇒ α⋅(β+γ) = (α⋅β) + (α⋅γ)
+    5. Additive Identity and Reverse
+       - ∃0 ∈ F ⇒ ∀α ∈ F ; α + 0 = α
+       - ∀α ∈ F ⇒ ∃-α ∈ F ; α + (-α) = 0
+    6. Multiplicative Identity and Reverse
+       - ∃1 ∈ F ⇒ ∀α ∈ F ; α ⋅ 1 = α
+       - ∀α ∈ F ⇒ ∃ α^-1 ∈ F ; α ⋅ α^-1 = 1
+
+** Vector Space
+- V over a field F (typically ℂ) with
+  - vector addition and scalar multiplication
+  - Properties of Addition
+    1. Closure : ∀ α,β ∈ V ⇒ α + β ∈ V
+    2. Associativity : ∀ α,β,γ ∈ V ⇒ (α + β) + γ = α + (β + γ)
+    3. Commutativity : ∀ α,β ∈ V ⇒ α + β = β + α
+    4. Existence of additive identity : ∃0 ∈ F && ∀α ∈ V ⇒ 0⋅α = 0
+    5. Existence of Additive Inverse : ∀α ∈ V ⇒ ∃-α ∈ V ; α + (-α) = 0
+       
+  - Properties of scalar multiplication
+    1. Closure under scalar mulitplication : ∀v ∈ V & ∀α ∈ F ⇒ α⋅v ∈ V
+    2. Compatibility of scalar multiplication with field multiplication : ∀a,b ∈ F & ∀v ∈ F ⇒ (ab)v = a(bv)
+    3. Identity Element of Scalar Multiplication : ∀v ∈ V ⇒ 1⋅v = v.
+    4. Distributivity of Scalar Multiplication with Respect to Vector Addition : ∀a ∈ F & ∀u,v ∈ V ⇒ a(u+v) = au+av
+    5. Distributivity of Scalar Multiplication with Respect to Field Addition : ∀α,β ∈ F & ∀v ∈ V ⇒ (α+β)v = αv + βv
+
+** Bases and Linear Dependence
+- Spanning set : Set of vectors (v1, v2, v3 ...vn) such that ∀v ∈ V , v = ∑ (α_i⋅v_i) for α_i ∈ F
+  - In english, can be written as a linear combination of vectors in the set.
+  - Example : ℂ2 -> spanning set is v1 = (1 ; 0) , v2 = (0 ; 1)
+- Linear Dependence : In α1, α2....αn, ∃i ⇒ αi ≠ 0, such that α1v1 + α1v2 ....αnvn = 0
+- Linear Independence : Not linearly dependent.
+  - Basis : Vectors that are linearly independent
+  - Dimension of Vector Space : Number of elements in basis
+  
+** Linear Operators
+- 
