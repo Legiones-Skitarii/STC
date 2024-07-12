@@ -1,3 +1,4 @@
+# Choice Paralysis and getting sniped
 *Note: The intro may be a bit long for your taste, so skip ahead if you feel like it. Also, this is on the rambling side, given my taste for a well structured essay has deteriorated (ok that's a lie, but I'm not structuring this one). But it is rambling for I wish it to be. It's been long since I've been here, and I must admit I like it. For better, or worse.*
 
 ![Nerd Sniping](https://imgs.xkcd.com/comics/nerd_sniping.png)
