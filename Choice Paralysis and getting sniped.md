@@ -64,6 +64,6 @@ For worse, you're hooked into the chaotic zeitgeist, with no reprieve save for t
 
 That's about it.
 
-General advice. Once weened off this (phone/SM/instant messaging), you'll usually find it's much more relaxed than usual and you probably will find a lot of time for other plans.
+General advice. Once weaned off this (phone/SM/instant messaging), you'll usually find it's much more relaxed than usual and you probably will find a lot of time for other plans.
 
 On that note, wanna go for a cup of tea ?
