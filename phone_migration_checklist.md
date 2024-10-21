@@ -18,4 +18,4 @@
 10. f-droid
     1. Pie launcher
 11. fleksy
-    12. Libera Reader
+12. Libera Reader
